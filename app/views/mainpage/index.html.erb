@@ -72,9 +72,13 @@
 
             <div class="row home-content__main">
                 
-                <h3><%= @tgline.welcome_text %></h3>
+                <h3>
+                   <%= @tgline.nil? ? "Write your welcome text" : @tgline.welcome_text %>
+                </h3>
 
-                <h1><%= @tgline.tagline_text %> </h1>
+                <h1>
+                    <%= @tgline.nil? ? "Write your tagline text" : @tgline.tagline_text %>
+                </h1>
 
                 <div class="home-content__buttons">
                     <a href="#contact" class="smoothscroll btn btn--stroke">

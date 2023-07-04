@@ -20,9 +20,6 @@ ActiveAdmin.register HomePage do
         "No Image Uploaded"
       end
     end
-    
-    
-    
     actions
   end
 
