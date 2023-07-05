@@ -19,44 +19,31 @@
 
             <div class="header-nav__content">
                 <h3>Navigation</h3>
-                
-                <ul class="header-nav__list">
-                    <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
-                    <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
-                    <li><a class="smoothscroll"  href="#services" title="services">Services</a></li>
-                    <li><a class="smoothscroll"  href="#works" title="works">Works</a></li>
-                    <li><a class="smoothscroll"  href="#clients" title="clients">Clients</a></li>
-                    <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
-                </ul>
-    
-                <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
-    
-                <ul class="header-nav__social">
-                    <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                    </li>
-                </ul>
 
+              <ul class="header-nav__list">
+                <li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
+                <li><a class="smoothscroll" href="#about" title="about">About</a></li>
+                <li><a class="smoothscroll" href="#services" title="services">Services</a></li>
+                <li><a class="smoothscroll" href="#works" title="works">Works</a></li>
+                <li><a class="smoothscroll" href="#clients" title="clients">Clients</a></li>
+                <li><a class="smoothscroll" href="#contact" title="contact">Contact</a></li>
+              </ul>
+
+              <ul class="header-nav__social">
+
+                <% @socialMedia.each do |media| %>
+                  <li>
+                    <a href="<%= media.name %>"><i class="<%= media.icon %>"></i></a>
+                  </li>
+                <% end %>
+              </ul>
             </div> <!-- end header-nav__content -->
-
         </nav>  <!-- end header-nav -->
 
-        <a class="header-menu-toggle" href="#0">
-            <span class="header-menu-text">Menu</span>
-            <span class="header-menu-icon"></span>
-        </a>
+      <a class="header-menu-toggle" href="#0">
+        <span class="header-menu-text">Menu</span>
+        <span class="header-menu-icon"></span>
+      </a>
 
     </header> <!-- end s-header -->
 
@@ -93,33 +80,23 @@
 
             <div class="home-content__scroll">
                 <a href="#about" class="scroll-link smoothscroll">
-                    <span>Scroll Down</span>
+                  <span>Scroll Down</span>
                 </a>
             </div>
 
-            <div class="home-content__line"></div>
+          <div class="home-content__line"></div>
 
         </div> <!-- end home-content -->
 
 
-        <ul class="home-social">
-            <li>
-                <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
-            </li>
-            <li>
-                <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
-            </li>
-            <li>
-                <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-            </li>
-            <li>
-                <a href="#0"><i class="fa fa-behance" aria-hidden="true"></i><span>Behance</span></a>
-            </li>
-            <li>
-                <a href="#0"><i class="fa fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a>
-            </li>
-        </ul> 
-        <!-- end home-social -->
+      <ul class="home-social">
+        <% @socialMedia.each do |media| %>
+          <li>
+            <a href="<%= media.url %>"><i class="<%= media.icon %>" aria-hidden="true"></i><span><%= media.name %></span></a>
+          </li>
+        <% end %>
+      </ul>
+      <!-- end home-social -->
 
     </section> <!-- end s-home -->
 
@@ -128,7 +105,7 @@
     ================================================== -->
     <section id='about' class="s-about">
 
-        <div class="row section-header has-bottom-sep" data-aos="fade-up">
+      <div class="row section-header has-bottom-sep" data-aos="fade-up">
             <div class="col-full">
                 <h3 class="subhead subhead--dark">Hello There</h3>
                 <h1 class="display-1 display-1--light">We Are Glint</h1>
